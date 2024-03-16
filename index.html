@@ -58,7 +58,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
      </button>
      <div class="fld-grp clearfix grpelem" id="widgetu155" data-required="false"><!-- none box -->
-      <span class="fld-textarea actAsDiv clearfix grpelem" id="u157-3"><!-- content --><textarea class="wrapped-input" id="widgetu155_input" name="custom_U155" tabindex="1"></textarea></span>
+      <span class="fld-textarea actAsDiv clearfix grpelem" id="u157-3"><!-- content --><textarea style="background-color: black; color: green;" class="wrapped-input" id="widgetu155_input" name="custom_U155" tabindex="1"></textarea></span>
      </div>
     </form>
     <div id="u207"><!-- simple frame --></div>
@@ -67,6 +67,23 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="verticalspacer" data-offset-top="773" data-content-above-spacer="1566" data-content-below-spacer="535"></div>
   </div>
   <!-- Other scripts -->
+  <script type="text/javascript">
+  const textarea = document.getElementById('widgetu155_input');
+  textarea.innerHTML = `
+  public async Task ShowVideos(ShowVideos showVideosModel,IFormFile videoFile)
+ {
+    var path = await FileSave(file);
+     
+
+     var video = _mapper.Map<ShowVideos>(showVideosModel);
+      video.FilePath = path.Item1;
+      video.FileName = path.Item2;
+      video.RealFileName = path.Item3;
+     await ShowVideo(video);
+ }
+  
+  `;
+</script>
   <script type="text/javascript">
    // Decide whether to suppress missing file error or not based on preference setting
 var suppressMissingFileError = false
