@@ -42,7 +42,7 @@
             return b
         });
         if (true && document.location.protocol != "https:")
-            c.paths.jquery = ["http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min", c.paths.jquery];
+            c.paths.jquery = ["https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js", c.paths.jquery];
         requirejs.config(c);
         muse_init()
     }
